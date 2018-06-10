@@ -1,0 +1,3 @@
+The right side should have the list of available commands. The bottom should have basic information.
+The map should fill most of the screen. I think 15 characters on the right side for commands and 5
+lines at the bottom.
