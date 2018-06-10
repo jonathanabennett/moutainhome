@@ -1,0 +1,3 @@
+#import nimbox
+
+echo "Testing"
