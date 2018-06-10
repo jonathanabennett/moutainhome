@@ -1,0 +1,6 @@
+[GENERAL]
+material_id=0001
+short_name = "Marble"
+description = "A Metamorphic rock ideal for creating beautiful scuptures."
+color_id = 001
+material_class= "Rock"

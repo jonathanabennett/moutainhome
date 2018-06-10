@@ -1,0 +1,5 @@
+[GENERAL]
+terrain_id=0001
+short_name="natural wall"
+description="An unfinished, natural wall."
+display="#"
