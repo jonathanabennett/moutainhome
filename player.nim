@@ -7,7 +7,7 @@ type
     x*: int
     y*: int
 
-  Direction = enum
+  Direction* = enum
     NORTH
     NORTHEAST
     EAST

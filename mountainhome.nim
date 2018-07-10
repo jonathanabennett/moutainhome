@@ -26,6 +26,24 @@ proc hello(screen: Nimbox): bool =
       of EventType.Key:
         if evt.sym == Symbol.Escape:
           break
+        if evt.ch == 'q':
+          break
+        if evt.ch == 'h':
+          discard movePlayer(player, Direction.WEST)
+        if evt.ch == 'l':
+          discard movePlayer(player, Direction.EAST)
+        if evt.ch == 'j':
+          discard movePlayer(player, Direction.SOUTH)
+        if evt.ch == 'k':
+          discard movePlayer(player, Direction.NORTH)
+        if evt.ch == 'y':
+          discard movePlayer(player, Direction.NORTHWEST)
+        if evt.ch == 'u':
+          discard movePlayer(player, Direction.NORTHEAST)
+        if evt.ch == 'b':
+          discard movePlayer(player, Direction.SOUTHWEST)
+        if evt.ch == 'n':
+          discard movePlayer(player, Direction.SOUTHEAST)
       else: discard
 
 when isMainModule:
