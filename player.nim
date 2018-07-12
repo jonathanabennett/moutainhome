@@ -1,11 +1,10 @@
-#import map
 #Player data
+import tables
+import thing
+import map
 
 type
-  Player* = ref object of RootObj
-    id*: int
-    x*: int
-    y*: int
+  Player* = ref object of Thing
 
   Direction* = enum
     NORTH
@@ -18,27 +17,35 @@ type
     NORTHWEST
 
 proc newPlayer*(id:int, x:int, y:int): Player =
-  Player(id:id, x:x, y:y)
+  new result
+  result.id = id
+  result.x = x
+  result.y = y
+  result.disp = "@"
 
-proc movePlayer*(player:Player, dir:Direction): bool =
+proc movePlayer*(player:Player, map:Map, dir:Direction): bool =
+  var newLoc: Location = (player.x, player.y)
   case dir
   of NORTH:
-    player.y -= 1
+    newLoc.y -= 1
   of NORTHEAST:
-    player.y -= 1
-    player.x += 1
+    newLoc.y -= 1
+    newLoc.x += 1
   of EAST:
-    player.x += 1
+    newLoc.x += 1
   of SOUTHEAST:
-    player.x += 1
-    player.y += 1
+    newLoc.x += 1
+    newLoc.y += 1
   of SOUTH:
-    player.y += 1
+    newLoc.y += 1
   of SOUTHWEST:
-    player.x -= 1
-    player.y += 1
+    newLoc.x -= 1
+    newLoc.y += 1
   of WEST:
-    player.x -= 1
+    newLoc.x -= 1
   of NORTHWEST:
-    player.x -= 1
-    player.y -= 1
+    newLoc.x -= 1
+    newLoc.y -= 1
+  if not map.map[(newLoc)].blocked:
+    player.x = newLoc.x
+    player.y = newLoc.y
