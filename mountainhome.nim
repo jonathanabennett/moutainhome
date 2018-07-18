@@ -7,7 +7,7 @@ proc hello(screen: Nimbox): bool =
   var evt: Event
   var width: int = screen.width
   var height: int = screen.height
-  var player: Player = newPlayer(0, width div 2, height div 2)
+  var player: Player = newPlayer(0, 25, 23)
   var map: Map = sampleMap(0, screen.width, screen.height)
   
 
